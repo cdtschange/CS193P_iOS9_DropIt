@@ -13,6 +13,7 @@
 		272DC5691DCAD3C000370B37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272DC5671DCAD3C000370B37 /* LaunchScreen.storyboard */; };
 		272DC5721DCAD42000370B37 /* DropItView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272DC5711DCAD42000370B37 /* DropItView.swift */; };
 		279773B51DCAD45D009F0B5B /* DropItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279773B41DCAD45D009F0B5B /* DropItViewController.swift */; };
+		279773B71DCAD585009F0B5B /* UIKit Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279773B61DCAD585009F0B5B /* UIKit Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		272DC56A1DCAD3C000370B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		272DC5711DCAD42000370B37 /* DropItView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropItView.swift; sourceTree = "<group>"; };
 		279773B41DCAD45D009F0B5B /* DropItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropItViewController.swift; sourceTree = "<group>"; };
+		279773B61DCAD585009F0B5B /* UIKit Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				272DC5711DCAD42000370B37 /* DropItView.swift */,
 				279773B41DCAD45D009F0B5B /* DropItViewController.swift */,
+				279773B61DCAD585009F0B5B /* UIKit Extensions.swift */,
 				272DC5621DCAD3C000370B37 /* Main.storyboard */,
 				272DC5701DCAD40100370B37 /* Supporting Files */,
 			);
@@ -149,6 +152,7 @@
 				279773B51DCAD45D009F0B5B /* DropItViewController.swift in Sources */,
 				272DC55F1DCAD3C000370B37 /* AppDelegate.swift in Sources */,
 				272DC5721DCAD42000370B37 /* DropItView.swift in Sources */,
+				279773B71DCAD585009F0B5B /* UIKit Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
