@@ -39,6 +39,22 @@ class DropItView: NamedBezierPathsView, UIDynamicAnimatorDelegate {
         return CGSize(width: size, height: size)
     }
     
+    func grapDrop(recognizer: UIPanGestureRecognizer) {
+        let gesturePoint = recognizer.locationInView(self)
+        switch recognizer.state {
+        case .Began:
+            if let dropToAttachTo = lastDrop where dropToAttachTo.superview != nil {
+                attachment = UIAttachmentBehavior(item: dropToAttachTo, attachedToAnchor: gesturePoint)
+            }
+            lastDrop = nil
+        case .Changed:
+            attachment?.anchorPoint = gesturePoint
+        default:
+            attachment = nil
+        }
+    }
+    
+    private var lastDrop: UIView?
     func addDrop() {
         var frame = CGRect(origin: CGPoint.zero, size: dropSize)
         frame.origin.x = CGFloat.random(dropsPerRow) * dropSize.width
@@ -48,8 +64,21 @@ class DropItView: NamedBezierPathsView, UIDynamicAnimatorDelegate {
         
         addSubview(drop)
         dropBehavior.addItem(drop)
+        lastDrop = drop
     }
     
+    private var attachment: UIAttachmentBehavior? {
+        willSet {
+            if attachment != nil {
+                animator.removeBehavior(attachment!)
+            }
+        }
+        didSet {
+            if attachment != nil {
+                animator.addBehavior(attachment!)
+            }
+        }
+    }
     
     private struct PathNames {
         static let MiddleBarrier = "MiddleBarrier"

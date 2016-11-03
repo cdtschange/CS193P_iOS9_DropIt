@@ -13,6 +13,7 @@ class DropItViewController: UIViewController {
     @IBOutlet weak var gameView: DropItView! {
         didSet {
             gameView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addDrop(_:))))
+            gameView.addGestureRecognizer(UIPanGestureRecognizer(target: gameView, action: #selector(DropItView.grapDrop(_:))))
         }
     }
     
