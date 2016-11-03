@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DropItView: UIView, UIDynamicAnimatorDelegate {
+class DropItView: NamedBezierPathsView, UIDynamicAnimatorDelegate {
     
     private lazy var animator: UIDynamicAnimator = {
         let animator = UIDynamicAnimator(referenceView: self)
@@ -48,6 +48,18 @@ class DropItView: UIView, UIDynamicAnimatorDelegate {
         
         addSubview(drop)
         dropBehavior.addItem(drop)
+    }
+    
+    
+    private struct PathNames {
+        static let MiddleBarrier = "MiddleBarrier"
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let path = UIBezierPath(ovalInRect: CGRect(center: bounds.mid, size: dropSize))
+        dropBehavior.addBarrier(path, named: PathNames.MiddleBarrier)
+        bezierPaths[PathNames.MiddleBarrier] = path
     }
     
     
